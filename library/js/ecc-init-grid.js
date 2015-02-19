@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
             var ratio = gridProductWidth / gridProductHeight;
 
             /**	set grid product image size into fix aspect ratio	**/
-            $('.ecc-grid-product-image').height((4 / 16) * gridProductWidth)
+            //$('.ecc-grid-product-image').height((4 / 16) * gridProductWidth)
 
             var gridProductSelector = $('.ecc-grid-product img');
 
