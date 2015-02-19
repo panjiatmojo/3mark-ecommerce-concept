@@ -31,6 +31,15 @@ h1, h2, h3 {
 	font-family: 'Helvetica Neue LT', Verdana, Geneva, sans-serif;
 	font-weight: 400;
 }
+ul.flexnav.large {
+		display:block;	
+}
+
+ul.flexnav.small {
+	display:none;	
+}
+	
+
 ul.flexnav > li > a, ul.flexnav > li > span
 {
 	font-size: 120%;
@@ -318,7 +327,7 @@ ul.flexnav > li > a, ul.flexnav > li > span {
 	padding: 0px !important;
 	border: 0px !important;
 }
-ul.flexnav a {
+ul.flexnav a, ul.flexnav span {
 	background: rgb(255,242,0) !important;
 	color: #000 !important;
 	-webkit-transition: all 200ms ease-in;
@@ -391,10 +400,9 @@ ul.flexnav li img.ecc-lup {
 	min-height: 100px;
 }
 .right-wrapper {
-	width: 78%;
-	padding: 0 1%;
-	float: left;
 	padding-bottom: 20px;
+	width:100%;
+	margin:auto;
 }
 
 h1.title, h1.page-title, .ecc-single-product .product .summary h1 {
@@ -1700,6 +1708,14 @@ ol.commentlist .comment_container .comment-text {
 		left: 0;
 		top: 0;	
 	}
+
+	ul.flexnav.large {
+		display:none;	
+	}
+
+	ul.flexnav.small {
+		display:block;	
+	}
 	
 	ul.flexnav {
 		position:absolute;
@@ -1715,7 +1731,7 @@ ol.commentlist .comment_container .comment-text {
 	{
 		width: 100%;	
 	}
-
+	
 }
 
 @media (max-width:1099px)

@@ -6,9 +6,7 @@
 <div class="header-wrapper">
   <header class="header">
   <nav class="header-sub-wrapper left">
-    <?php if(!is_mobile()):?>
     <?php get_template_part('template/ecc', 'nav-menu');?>
-    <?php endif;?>
   </nav>
 
   <a href="#">
