@@ -39,7 +39,7 @@ $category_list = '<ul>'.$category_list.'</ul>';
 ?>
 <div class="mobile-logo"><a href="<?php echo site_url().'/'.$content['url']; ?>"><img src="<?php echo get_option('ecc_website_mobile_logo');?>"/></a></div>
 <div class="menu-button">
-  <div class="ecc-menu-logo-wrapper"><img class="ecc-menu-logo" width="30px" height="30px" src="<?php echo get_template_directory_uri().'/images/ecc-dropdown.png'?>"/></div>
+  <div class="ecc-menu-logo-wrapper"><img class="ecc-menu-logo" width="30px" height="30px" src="<?php echo get_template_directory_uri().'/images/ecc-dropdown-black.png'?>"/></div>
 </div>
 <ul id="menus" class="flexnav" data-breakpoint="1280">
     <?php foreach($menu_list as $slug => $content):?>
