@@ -56,11 +56,6 @@
       <td><input name="ecc_slider_pause" type="text" id="ecc_slider_pause" value="<?php echo get_option('ecc_slider_pause');?>" size="5" maxlength="5">
         <p class="description">Pause Duration for Slide</p></td>
     </tr>
-    <tr valign="top">
-      <th scope="row"><label for="blogname">Slider Height</label></th>
-      <td><input name="ecc_slider_height" type="text" id="ecc_slider_height" value="<?php echo get_option('ecc_slider_height');?>" size="5" maxlength="5">
-        <p class="description">Height of Picture Slider</p></td>
-    </tr>
   </tbody>
 </table>
 <p class="submit">
