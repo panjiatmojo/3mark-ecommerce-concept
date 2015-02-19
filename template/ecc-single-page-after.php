@@ -9,5 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 <!--	content end here	-->
 </div>
 </div>
+</div>
 
 <div style="clear:both"></div>
