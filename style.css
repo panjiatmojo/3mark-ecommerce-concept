@@ -693,7 +693,7 @@ h1.product_title
 	font-style: normal;
 	letter-spacing: 1px;
 }
-#footer-wrapper {
+.footer-wrapper {
 	background: #000;
 	color: #FFF;
 }

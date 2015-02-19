@@ -259,7 +259,7 @@ h2.title span {
 	z-index:2;
 	text-transform:uppercase;
 }
-#footer-wrapper {
+.footer-wrapper {
 	background: #f9f9f9;
 }
 .footer {
@@ -472,7 +472,7 @@ h2.title span {
 
 
 
-<div id="footer-wrapper">
+<div class="footer-wrapper">
   <div class="footer">
     <ul>
       <li>

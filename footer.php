@@ -5,7 +5,7 @@
   
  	//if ( $query_reference->get( 'post_type') == 'wpsc-product' || $query_reference->get('wpsc_product_category')) : ?>
 
-<div id="footer-wrapper">
+<div class="footer-wrapper">
   <!--<ul id="footer-first-wrapper" class="footer-widget-wrapper">
     <li class="footer-widget-container">
       <?php require('template/ecc-social-media.php');?>
