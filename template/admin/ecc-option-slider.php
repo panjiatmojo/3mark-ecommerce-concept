@@ -4,14 +4,14 @@
     <tr valign="top">
       <th scope="row"><label for="blogname">Enable Slider</label></th>
       <td><label for="ecc_slider_enable">
-          <input name="ecc_slider_enable" type="checkbox" id="ecc_slider_enable" value="true" <?php echo (get_option('ecc_slider_enable'))?'checked=\"checked\"':"";?> >
+          <input name="ecc_slider_enable" type="checkbox" id="ecc_slider_enable" value="true" <?php echo (get_option('ecc_slider_enable') == true)?'checked=\"checked\"':"";?> >
           Enable</label>
         <p class="description">Enable Picture Slider</p></td>
     </tr>
     <tr valign="top">
       <th scope="row"><label for="blogname">Enable Full Screen</label></th>
       <td><label for="ecc_slider_full_screen">
-          <input name="ecc_slider_full_screen" type="checkbox" id="ecc_slider_full_screen" value="true" <?php echo (get_option('ecc_slider_full_screen'))?'checked="checked"':"";?> >
+          <input name="ecc_slider_full_screen" type="checkbox" id="ecc_slider_full_screen" value="true" <?php echo (get_option('ecc_slider_full_screen') == true)?'checked="checked"':"";?> >
           Enable</label>
         <p class="description">Enable Full Screen Picture Slider</p></td>
     </tr>

@@ -2,6 +2,8 @@
 /**	load the default configuration	**/
 require(ECC_THEME_HOME_DIR.'/config/config.php');
 
+wp_enqueue_script('ecc-init-admin', get_template_directory_uri().'/library/js/ecc-init-admin.js', array('jquery'), '1.0', false);
+
 if($_POST['action'] == 'update')
 {
 	foreach($_POST as $key => $content)
@@ -28,7 +30,7 @@ $current_page = isset( $_GET[ 'page' ] ) ? $_GET[ 'page' ] : 'ecc_admin_option_m
     <a href="?page=<?php echo $current_page;?>&tab=<?php echo $tab_parameter['tab_slug'];?>" class="nav-tab <?php if($tab_parameter['tab_slug'] == $active_tab){echo 'nav-tab-active';}?>"> <?php echo $tab_parameter['tab_name'];?> </a>
     <?php endforeach;?>
   </h2>
-  <form method="post">
+  <form method="post" class="ecc-admin-form">
     <input type="hidden" name="action" value="update">
     <?php 
 	if(file_exists(__DIR__.'/ecc-'.$active_tab.'.php'))

@@ -4,7 +4,7 @@
     <tr valign="top">
       <th scope="row"><label for="blogname">Social Media</label></th>
       <td><label for="ecc_social_enable">
-          <input name="ecc_social_enable" type="checkbox" id="ecc_social_enable" value="true" <?php echo (get_option('ecc_social_enable'))?'checked=\"checked\"':"";?> >
+          <input name="ecc_social_enable" type="checkbox" id="ecc_social_enable" value="true" <?php echo (get_option('ecc_social_enable') == true)?'checked=\"checked\"':"";?> >
           Enable</label>
         <p class="description">Enable Social Media</p>
         <input name="ecc_social_title" type="text" id="ecc_social_title" value="<?php echo get_option('ecc_social_title');?>" size="40" maxlength="40">
@@ -13,7 +13,7 @@
     <tr valign="top">
       <th scope="row"><label for="blogname">Facebook</label></th>
       <td><label for="ecc_facebook_enable">
-          <input name="ecc_facebook_enable" type="checkbox" id="ecc_facebook_enable" value="true" <?php echo (get_option('ecc_facebook_enable'))?'checked=\"checked\"':"";?> >
+          <input name="ecc_facebook_enable" type="checkbox" id="ecc_facebook_enable" value="true" <?php echo (get_option('ecc_facebook_enable') == true)?'checked=\"checked\"':"";?> >
           Enable</label>
         <p class="description">Enable Facebook Link</p>
         <input name="ecc_facebook_url" type="text" id="ecc_facebook_url" value="<?php echo get_option('ecc_facebook_url');?>" size="40" maxlength="40">
@@ -28,7 +28,7 @@
     <tr valign="top">
       <th scope="row"><label for="blogname">Twitter</label></th>
       <td><label for="ecc_twitter_enable">
-          <input name="ecc_twitter_enable" type="checkbox" id="ecc_twitter_enable" value="true" <?php echo (get_option('ecc_twitter_enable'))?'checked=\"checked\"':"";?> >
+          <input name="ecc_twitter_enable" type="checkbox" id="ecc_twitter_enable" value="true" <?php echo (get_option('ecc_twitter_enable') == true)?'checked=\"checked\"':"";?> >
           Enable</label>
         <p class="description">Enable Twitter Link</p>
         <input name="ecc_twitter_url" type="text" id="ecc_twitter_url" value="<?php echo get_option('ecc_twitter_url');?>" size="40" maxlength="40">
@@ -44,7 +44,7 @@
       <th scope="row"><label for="blogname">Google+</label></th>
       <td>
         <label for="ecc_google_enable">
-          <input name="ecc_google_enable" type="checkbox" id="ecc_google_enable" value="true" <?php echo (get_option('ecc_google_enable'))?'checked=\"checked\"':"";?> >
+          <input name="ecc_google_enable" type="checkbox" id="ecc_google_enable" value="true" <?php echo (get_option('ecc_google_enable') == true)?'checked=\"checked\"':"";?> >
           Enable</label>
         <p class="description">Enable Google+ Link</p>
         <input name="ecc_google_url" type="text" id="ecc_google_url" value="<?php echo get_option('ecc_google_url');?>" size="40" maxlength="40">
@@ -53,7 +53,7 @@
     <tr valign="top">
       <th scope="row"><label for="blogname">Pinterest</label></th>
       <td><label for="ecc_pinterest_enable">
-          <input name="ecc_pinterest_enable" type="checkbox" id="ecc_pinterest_enable" value="true" <?php echo (get_option('ecc_pinterest_enable'))?'checked=\"checked\"':"";?> >
+          <input name="ecc_pinterest_enable" type="checkbox" id="ecc_pinterest_enable" value="true" <?php echo (get_option('ecc_pinterest_enable') == true)?'checked=\"checked\"':"";?> >
           Enable</label>
         <p class="description">Enable Pinterest Link</p>
         <input name="ecc_pinterest_url" type="text" id="ecc_pinterest_url" value="<?php echo get_option('ecc_pinterest_url');?>" size="40" maxlength="40">
@@ -68,7 +68,7 @@
     <tr valign="top">
       <th scope="row"><label for="blogname">Tumblr</label></th>
       <td><label for="ecc_tumblr_enable">
-          <input name="ecc_tumblr_enable" type="checkbox" id="ecc_tumblr_enable" value="true" <?php echo (get_option('ecc_tumblr_enable'))?'checked=\"checked\"':"";?> >
+          <input name="ecc_tumblr_enable" type="checkbox" id="ecc_tumblr_enable" value="true" <?php echo (get_option('ecc_tumblr_enable') == true)?'checked=\"checked\"':"";?> >
           Enable</label>
         <p class="description">Enable Tumblr Link</p>
         <input name="ecc_tumblr_url" type="text" id="ecc_tumblr_url" value="<?php echo get_option('ecc_tumblr_url');?>" size="40" maxlength="40">
@@ -83,7 +83,7 @@
     <tr valign="top">
       <th scope="row"><label for="blogname">Instagram</label></th>
       <td><label for="ecc_instagram_enable">
-          <input name="ecc_instagram_enable" type="checkbox" id="ecc_instagram_enable" value="true" <?php echo (get_option('ecc_instagram_enable'))?'checked=\"checked\"':"";?> >
+          <input name="ecc_instagram_enable" type="checkbox" id="ecc_instagram_enable" value="true" <?php echo (get_option('ecc_instagram_enable') == true)?'checked=\"checked\"':"";?> >
           Enable</label>
         <p class="description">Enable Instagram Link</p>
         <input name="ecc_instagram_url" type="text" id="ecc_instagram_url" value="<?php echo get_option('ecc_instagram_url');?>" size="40" maxlength="40">
