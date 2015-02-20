@@ -1685,6 +1685,23 @@ ol.commentlist .comment_container .comment-text {
 	line-height:1.6;
 }
 
+/** woocommerce cart, my account & checkout style	**/
+.post-content .woocommerce
+{
+	width: 100%;
+	max-width:90%;
+	padding: 5%;
+	margin:auto;
+	background: #FFF;
+	color: #000;
+}
+
+/**	woocommerce page table / form styling	**/
+.post-content .woocommerce form
+{
+	overflow-x: scroll;	
+}
+
 @media (max-width: 1279px)
 {
 	/**	styling for all header component	**/
