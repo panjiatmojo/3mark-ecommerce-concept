@@ -11,7 +11,7 @@ if($_POST['action'] == 'update')
 		if(preg_match('/^ecc_.*$/',$key))
 		{ 
 			//	only update option if started with ecc_
-			update_option($key, $_POST[$key]);
+			update_option($key, esc_attr($_POST[$key]));
 		}
 	}
 }
