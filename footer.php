@@ -57,4 +57,10 @@
   </div>
 </div>
 <?php wp_footer(); ?>
-</body></html>
+</body>
+
+<?php 
+/**	added hook for content filtering purpose	**/
+do_action('ecc_body_after');?>
+
+</html>

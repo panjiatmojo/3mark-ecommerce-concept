@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <!-- retrieve header here -->
+<?php do_action('ecc_single_before');?>
 
 <div class="main-wrapper">
   <div <?php post_class('content-wrapper');?>>
@@ -31,4 +32,7 @@
   <!-- show tile here --> 
   
 </div>
+
+<?php do_action('ecc_single_after');?>
+
 <?php get_footer(); ?>

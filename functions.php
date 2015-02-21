@@ -1340,6 +1340,15 @@ add_action('ecc_page_after', 'ecc_filter_content_end', 100);
 add_action('ecc_index_before', 'ecc_filter_content_start', 1);
 add_action('ecc_index_after', 'ecc_filter_content_end', 100);
 
+/**	add content filtering to search header	**/
+add_action('ecc_search_before', 'ecc_filter_content_start', 1);
+add_action('ecc_search_after', 'ecc_filter_content_end', 100);
+
+/**	add content filtering to single header	**/
+add_action('ecc_single_before', 'ecc_filter_content_start', 1);
+add_action('ecc_single_after', 'ecc_filter_content_end', 100);
+
+
 
 function ecc_filter_content_start()
 {
@@ -1361,7 +1370,6 @@ function ecc_filter_content_end()
 /**	attach image loader to content hook	**/
 if(get_option('ecc_image_loader_enable') == true)
 {
-add_filter( 'the_content', 'ecc_filter_image', 100 );
 add_filter( 'ecc_filter_content', 'ecc_filter_image', 100 );
 function ecc_filter_image($content)
 {

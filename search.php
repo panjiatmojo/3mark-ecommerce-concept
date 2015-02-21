@@ -1,5 +1,7 @@
 <?php get_header(); 
 
+do_action('ecc_search_before');
+
 //	create new query since modifying main query is not working
 global $wp_query;
 
@@ -52,4 +54,8 @@ $loop = new WP_Query( array(
     </div>
   </div>
 </div>
-<?php get_footer(); ?>
+<?php
+
+do_action('ecc_search_after');
+
+get_footer(); ?>

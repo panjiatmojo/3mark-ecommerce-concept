@@ -14,5 +14,11 @@ $word_search = get_option("3mark_word_search","Search Here");
 <?php ecc_load_header_script();?>
 
 </head>
+
+
+<?php 
+/**	add hook for content filtering purpose	**/
+do_action('ecc_body_before');?>
+
 <body id="home" class="<?php echo get_view_type();?>">
 <?php get_template_part('template/ecc', 'header');?>
