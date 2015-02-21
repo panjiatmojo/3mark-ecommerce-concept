@@ -126,18 +126,6 @@ function activatePanorama() {
 
 jQuery(document).ready(function($) {
 
-	if($('.main-wrapper'))
-	{
-		var headerHeight = parseFloat($('.header-wrapper').height());
-		$('.main-wrapper').css('margin-top', headerHeight+'px');	
-	}
-	
-    if ($('#wpadminbar')) {
-        //	function to create wpadminbar stack with header
-        var height = $('#wpadminbar').outerHeight();
-
-        $('.header-wrapper').css('margin-top', height + 'px');
-    }
 	
 	var headerWidth = $('#header').outerWidth(true);
 

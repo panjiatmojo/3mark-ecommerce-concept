@@ -42,7 +42,8 @@ $tab = array(
 1 => array( 'tab_name' => 'Contact', 'tab_slug' => 'option-contact'),
 2 => array( 'tab_name' => 'Partner', 'tab_slug' => 'option-partner'),
 3 => array( 'tab_name' => 'Social', 'tab_slug' => 'option-social'),
-4 => array( 'tab_name' => 'Slider', 'tab_slug' => 'option-slider')
+4 => array( 'tab_name' => 'Slider', 'tab_slug' => 'option-slider'),
+5 => array( 'tab_name' => 'Image', 'tab_slug' => 'option-image')
 );
 
 ?>

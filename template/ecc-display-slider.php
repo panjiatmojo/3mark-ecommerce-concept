@@ -38,6 +38,7 @@ wp_enqueue_script('ecc-display-slider', get_template_directory_uri().'/library/j
       <?php
   endwhile;
   endif;
+  
     ?>
     </ul>
   </div>

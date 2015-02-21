@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="functions.js" server="192.168.1.20" local="130630575624074919" remote="130653448800000000" Dst="-1" />
-<file name="hoverIntent.js" server="192.168.1.20" local="130170835040000000" remote="130653448800000000" Dst="-1" />
-<file name="superfish.js" server="192.168.1.20" local="130170835040000000" remote="130653448800000000" Dst="-1" />
-<file name="supersubs.js" server="192.168.1.20" local="130170835040000000" remote="130653448800000000" Dst="-1" />
 <file name="ecc-init-slider.js" server="theatmojo.com" local="130682070122849704" remote="130684516200000000" Dst="0" />
-<file name="flexslider.css" server="theatmojo.com" local="130486217840000000" remote="130684516200000000" Dst="0" />
 <file name="functions.js" server="theatmojo.com" local="130682077734064716" remote="130684516200000000" Dst="0" />
-<file name="hoverIntent.js" server="theatmojo.com" local="130653989380000000" remote="130684516200000000" Dst="0" />
 <file name="jquery.flexnav.min.js" server="theatmojo.com" local="130639227340000000" remote="130684516200000000" Dst="0" />
 <file name="jquery.flexslider-min.js" server="theatmojo.com" local="130486217840000000" remote="130684516200000000" Dst="0" />
-<file name="superfish.js" server="theatmojo.com" local="130653989380000000" remote="130684516200000000" Dst="0" />
-<file name="supersubs.js" server="theatmojo.com" local="130653989380000000" remote="130684516200000000" Dst="0" />
 <file name="ecc-init-slider.js" server="tokokompu.com" local="130688045233698583" remote="130687645800000000" Dst="0" />
-<file name="flexslider.css" server="tokokompu.com" local="130486217840000000" remote="130687645800000000" Dst="0" />
-<file name="functions.js" server="tokokompu.com" local="130688051445076987" remote="130687645800000000" Dst="0" />
-<file name="hoverIntent.js" server="tokokompu.com" local="130653989380000000" remote="130687645800000000" Dst="0" />
+<file name="functions.js" server="tokokompu.com" local="130689564312820712" remote="130689135600000000" Dst="0" />
 <file name="jquery.flexnav.min.js" server="tokokompu.com" local="130639227340000000" remote="130687645800000000" Dst="0" />
 <file name="jquery.flexslider-min.js" server="tokokompu.com" local="130486217840000000" remote="130687645800000000" Dst="0" />
-<file name="superfish.js" server="tokokompu.com" local="130653989380000000" remote="130687645800000000" Dst="0" />
-<file name="supersubs.js" server="tokokompu.com" local="130653989380000000" remote="130687645800000000" Dst="0" />
 <file name="ecc-init-image-upload.js" server="tokokompu.com" local="130677895286351167" remote="130687645800000000" Dst="0" />
 <file name="ecc-init-grid.js" server="tokokompu.com" local="130688133341867257" remote="130687701000000000" Dst="0" />
 <file name="ecc-init-admin.js" server="tokokompu.com" local="130688869026643362" remote="130688436600000000" Dst="0" />
+<file name="ecc-init-header.js" server="tokokompu.com" local="130689564768264215" remote="130689132600000000" Dst="0" />
 </dwsync>

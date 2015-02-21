@@ -1319,4 +1319,54 @@ function ecc_load_init_grid()
     ), '1.0', false); //	load the 3mark library script}
 
 }
+add_action('ecc_load_js_other', 'ecc_load_init_header');
+
+function ecc_load_init_header()
+{
+    wp_enqueue_script('ecc-init-header', get_template_directory_uri() . '/library/js/ecc-init-header.js', array(
+        'jquery'
+    ), '1.0', false); //	load the 3mark library script}
+}
+
+/**	add content filtering to header single product page	**/
+add_action('ecc_single_page_before', 'ecc_filter_content_start', 1);
+add_action('ecc_single_page_after', 'ecc_filter_content_end', 100);
+
+/**	add content filtering to page header	**/
+add_action('ecc_page_before', 'ecc_filter_content_start', 1);
+add_action('ecc_page_after', 'ecc_filter_content_end', 100);
+
+/**	add content filtering to index header	**/
+add_action('ecc_index_before', 'ecc_filter_content_start', 1);
+add_action('ecc_index_after', 'ecc_filter_content_end', 100);
+
+
+function ecc_filter_content_start()
+{
+	ob_start();	
+}
+
+function ecc_filter_content_end()
+{
+	$result = ob_get_contents();
+	
+	ob_end_clean();	
+	
+	$result = apply_filters('ecc_filter_content', $result);
+	
+	echo $result;
+}
+
+
+/**	attach image loader to content hook	**/
+if(get_option('ecc_image_loader_enable') == true)
+{
+add_filter( 'the_content', 'ecc_filter_image', 100 );
+add_filter( 'ecc_filter_content', 'ecc_filter_image', 100 );
+function ecc_filter_image($content)
+{
+	require_once(__DIR__.'/library/php/image-loader/ecc-image-loader.class.php');
+	return Ecc_Image_Loader::filter_image($content);
+}
+}
 ?>

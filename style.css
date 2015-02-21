@@ -230,7 +230,7 @@ iframe {
 
 
 /**	style for center positioned logo	**/
-.banner-logo
+.header .banner-logo
 {
 	width:auto;
 	height:auto !important;
@@ -238,7 +238,7 @@ iframe {
 	top: 0;	
 }
 
-.banner {
+.header .banner {
 	text-transform: none;
 	display: inline-block;
 	margin: 0px auto;
@@ -246,10 +246,10 @@ iframe {
 	text-transform: capitalize;
 	color: #e74c3c;
 }
-.banner img {
+.header .banner img {
 	width: auto;
 }
-.banner-sub {
+.header .banner-sub {
 	font-size: 50%;
 	display: inline-block;
 	text-align: left;
@@ -1039,6 +1039,13 @@ ul.pagination.simple li img {
 /* ----------------------------- */
 
 /* search result container */
+
+.content-wrapper.search
+{
+	display:block;
+	margin:auto;
+	width:100%;	
+}
 
 #ecc-search-wrapper li {
 }

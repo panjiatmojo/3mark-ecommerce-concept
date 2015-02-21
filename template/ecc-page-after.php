@@ -11,7 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 </div>
 
 <div style="clear:both"></div>
-<?php do_action('ecc_after_page');?>
 
 </div>
 <div style="clear:both"></div>
+
+<?php do_action('ecc_page_after');?>
+

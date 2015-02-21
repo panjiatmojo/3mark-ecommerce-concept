@@ -21,9 +21,8 @@ $loop = new WP_Query( array(
 <!-- retrieve header here -->
 
 <div class="main-wrapper">
-  <div <?php post_class('content-wrapper');?>>
-    <div class="right-wrapper search">
-      <div id="search-result-container" class="category">
+  <div class="content-wrapper search">
+    <div class="right-wrapper">
         <h1 class="title"><span>Search Results For "
           <?php the_search_query() ?>
           "</span></h1>
@@ -49,7 +48,6 @@ $loop = new WP_Query( array(
               <div style="clear:both"></div>
             </ul>
           </div>
-        </div>
       </div>
     </div>
   </div>
