@@ -7,7 +7,7 @@
 
 	get_template_part('template/ecc', 'display-slider');
 	?>
-  <div class="main-content" class="index-page"> 
+  <div <?php post_class('content-wrapper');?>> 
     <div class="ecc-product-container">
       <ul>
         <?php

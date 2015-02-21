@@ -5,8 +5,8 @@
 ?>
 
 <div class="main-wrapper">
-  <div class="content-wrapper">
-    <div class="right-wrapper">
+  <div <?php post_class('content-wrapper');?>>
+    <div class="right-wrapper page">
       <div class="post-wrapper">
         <div <?php the_post(); post_class(); ?> >
           <!--<h1 class="title"><a href="<?php the_permalink();?>"> <span>

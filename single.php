@@ -2,7 +2,7 @@
 <!-- retrieve header here -->
 
 <div class="main-wrapper">
-  <div class="content-wrapper">
+  <div <?php post_class('content-wrapper');?>>
     <div class="right-wrapper">
       <div <?php post_class(); ?>>
         <div class="post-content">

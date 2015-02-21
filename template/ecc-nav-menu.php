@@ -20,13 +20,13 @@ $category_array = ecc_category_to_array($category_array);
 
 foreach($category_array as $key => $content)
 {
-	$category_list .= '<li>'.$content['name'].'</li>';	
+	$category_list .= '<li><a href="'.site_url().'/product-category/'.$content['slug'].'">'.$content['name'].'</a></li>';	
 }
 
 $category_list = '<ul>'.$category_list.'</ul>';
 	
 	$menu_list = array(
-	0 => array('url' => '', 'content' => 'PRODUCTS', 'class' => '', 'link' => true,'child' => $category_list),
+	0 => array('url' => '#', 'content' => 'PRODUCTS', 'class' => '', 'link' => true,'child' => $category_list),
 	1 => array('url' => 'features', 'content' => 'FEATURES', 'class' => ''),
 	2 => array('url' => 'connect', 'content' => 'CONNECT', 'class' => ''),
 	3 => array('url' => '', 'content' => '<img class="banner-logo" src="'.get_option('ecc_website_logo').'" />', 'class' => 'double-width', 'mobile' => false, ),

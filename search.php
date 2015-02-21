@@ -21,24 +21,24 @@ $loop = new WP_Query( array(
 <!-- retrieve header here -->
 
 <div class="main-wrapper">
-<div class="content-wrapper">
-  <div class="right-wrapper">
-    <div id="search-result-container" class="category">
-      <h1 class="title"><span>Search Results For "
-        <?php the_search_query() ?>
-        "</span></h1>
-      <h2>Products</h2>
-      <div class="post-content">
-        <div class="product-list"> <?php echo ecc_get_pagination(); ?>
-          <ul>
-            <?php
+  <div <?php post_class('content-wrapper');?>>
+    <div class="right-wrapper search">
+      <div id="search-result-container" class="category">
+        <h1 class="title"><span>Search Results For "
+          <?php the_search_query() ?>
+          "</span></h1>
+        <h2>Products</h2>
+        <div class="post-content">
+          <div class="product-list"> <?php echo ecc_get_pagination(); ?>
+            <ul>
+              <?php
 
 		if ( $loop->have_posts() ) {
 			while ( $loop->have_posts() ) : $loop->the_post();
 			
 			wc_get_template_part( 'content', 'product' );
 			?>
-            <?php
+              <?php
 			endwhile;
 		} else {
 			echo __( 'No products found' );
@@ -46,10 +46,10 @@ $loop = new WP_Query( array(
 
 
 ?>
-            <div style="clear:both"></div>
-          </ul>
+              <div style="clear:both"></div>
+            </ul>
+          </div>
         </div>
-        
       </div>
     </div>
   </div>
