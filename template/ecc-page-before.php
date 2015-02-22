@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
 
-<?php do_action('ecc_page_before');?>
+<?php do_action('ecc_single_page_before');?>
 
 <div class="main-wrapper">
   <div class="content-wrapper">

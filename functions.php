@@ -196,11 +196,11 @@ function ecc_category_image()
     }
 }
 /**	add new label for **/
-add_action( 'woocommerce_product_thumbnails', 'ecc_new_label');
+add_action('woocommerce_product_thumbnails', 'ecc_new_label');
 
 function ecc_new_label()
 {
-	get_template_part('template/product/ecc', 'product-new-label');
+    get_template_part('template/product/ecc', 'product-new-label');
 }
 
 /**	remove breadcrumb from product category page	**/
@@ -245,44 +245,46 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 /**	add feature & specs section	**/
 function ecc_product_feature()
 {
-	global $product, $post;
-	get_template_part('template/product/ecc','product-feature');		
+    global $product, $post;
+    get_template_part('template/product/ecc', 'product-feature');
 }
-add_action('woocommerce_after_single_product_summary',  'ecc_product_feature', 5);
+add_action('woocommerce_after_single_product_summary', 'ecc_product_feature', 5);
 
 /**	add product review section	**/
 function ecc_product_review()
 {
-	global $product, $post;
-	get_template_part('template/product/ecc','product-review');		
+    global $product, $post;
+    get_template_part('template/product/ecc', 'product-review');
 }
-add_action('woocommerce_after_single_product_summary',  'ecc_product_review', 6);
+add_action('woocommerce_after_single_product_summary', 'ecc_product_review', 6);
 
 /**	add new custom type product attribute	**/
 /**	add custom attribute fields	**/
-add_action( 'woocommerce_product_options_general_product_data', 'ecc_add_custom_general_fields' );
+add_action('woocommerce_product_options_general_product_data', 'ecc_add_custom_general_fields');
 
 /**	add save custom attribute fields function	**/
-add_action( 'woocommerce_process_product_meta', 'ecc_add_custom_general_fields_save' );
+add_action('woocommerce_process_product_meta', 'ecc_add_custom_general_fields_save');
 
 /**	add custom attribute fields	**/
-function ecc_add_custom_general_fields() {
- 
-  global $woocommerce, $post;
-  get_template_part('template/product/ecc', 'product-meta');
+function ecc_add_custom_general_fields()
+{
+    
+    global $woocommerce, $post;
+    get_template_part('template/product/ecc', 'product-meta');
 }
 /**	add save custom attribute fields function	**/
-function ecc_add_custom_general_fields_save( $post_id ){
-	
-	$value = $_POST['compatibility'];
-	if( !empty( $value ) )
-		update_post_meta( $post_id, 'compatibility', esc_attr( $value ) );	
-	$value = $_POST['material'];
-	if( !empty( $value ) )
-		update_post_meta( $post_id, 'material', esc_attr( $value ) );	
-	$value = $_POST['storage'];
-	if( !empty( $value ) )
-		update_post_meta( $post_id, 'storage', esc_attr( $value ) );	
+function ecc_add_custom_general_fields_save($post_id)
+{
+    
+    $value = $_POST['compatibility'];
+    if (!empty($value))
+        update_post_meta($post_id, 'compatibility', esc_attr($value));
+    $value = $_POST['material'];
+    if (!empty($value))
+        update_post_meta($post_id, 'material', esc_attr($value));
+    $value = $_POST['storage'];
+    if (!empty($value))
+        update_post_meta($post_id, 'storage', esc_attr($value));
 }
 
 
@@ -897,15 +899,15 @@ function ecc_theme_menu()
     
     
     /**	register the dashboard page	by override the top level slug	**/
-    /*$emgl_dashboard_page = add_submenu_page('emgl_top_menu', 'Guest List Dashboard', "Dashboard","manage_options", 'emgl_top_menu', 'emgl_top_menu');
+    /*$ecc_dashboard_page = add_submenu_page('ecc_top_menu', 'Guest List Dashboard', "Dashboard","manage_options", 'ecc_top_menu', 'ecc_top_menu');
     
-    add_action('load-'.$emgl_dashboard_page, 'emgl_enqueue_admin');*/
+    add_action('load-'.$ecc_dashboard_page, 'ecc_enqueue_admin');*/
     
     /**	register the option page	**/
-    $emgl_option_page = add_submenu_page('ecc_admin_option_menu', 'Commerce Options', "Options", "manage_options", 'emgl_option_menu', 'emgl_option_menu');
+    $ecc_option_page = add_submenu_page('ecc_admin_option_menu', 'Commerce Options', "Options", "manage_options", 'ecc_option_menu', 'ecc_option_menu');
     
-    add_action('load-' . $emgl_dashboard_page, 'emgl_register_script');
-    add_action('load-' . $emgl_option_page, 'emgl_register_script');
+    add_action('load-' . $ecc_dashboard_page, 'ecc_register_script');
+    add_action('load-' . $ecc_option_page, 'ecc_register_script');
     
 }
 
@@ -920,6 +922,19 @@ function ecc_admin_option_menu()
     //	load the template of administrator menu form
     get_template_part('template/admin/option');
 }
+
+function ecc_option_menu()
+{
+    /**	show the option page	**/
+    if (!current_user_can('administrator')) {
+        
+        wp_die(__('You do not have sufficient permissions to access this page.'));
+    }
+    
+    //	load the template of administrator menu form
+    get_template_part('template/admin/option');
+}
+
 
 function ecc_theme_install()
 {
@@ -937,7 +952,7 @@ function ecc_theme_uninstall()
 
 add_action('init', 'create_product_taxonomy', 0);
 
-// create two taxonomies, genres and writers for the post type "book"
+/**	create brand taxonomy	**/
 function create_product_taxonomy()
 {
     // Add new taxonomy, make it hierarchical (like categories)
@@ -1317,7 +1332,7 @@ function ecc_load_init_grid()
     wp_enqueue_script('ecc-init-grid', get_template_directory_uri() . '/library/js/ecc-init-grid.js', array(
         'jquery'
     ), '1.0', false); //	load the 3mark library script}
-
+    
 }
 add_action('ecc_load_js_other', 'ecc_load_init_header');
 
@@ -1328,53 +1343,29 @@ function ecc_load_init_header()
     ), '1.0', false); //	load the 3mark library script}
 }
 
-/**	add content filtering to header single product page	**/
-add_action('ecc_single_page_before', 'ecc_filter_content_start', 1);
-add_action('ecc_single_page_after', 'ecc_filter_content_end', 100);
+/**	load internal plugins	**/
+// Run this code on 'after_theme_setup', when plugins have already been loaded.
+add_action('after_setup_theme', 'ecc_load_internal_plugin');
 
-/**	add content filtering to page header	**/
-add_action('ecc_page_before', 'ecc_filter_content_start', 1);
-add_action('ecc_page_after', 'ecc_filter_content_end', 100);
+define('ECC_PLUGINS_URL', plugin_dir_url( __FILE__ ).'/plugins');
+define('ECC_PLUGINS_DIR', plugin_dir_path( __FILE__ ).'/plugins');
 
-/**	add content filtering to index header	**/
-add_action('ecc_index_before', 'ecc_filter_content_start', 1);
-add_action('ecc_index_after', 'ecc_filter_content_end', 100);
-
-/**	add content filtering to search header	**/
-add_action('ecc_search_before', 'ecc_filter_content_start', 1);
-add_action('ecc_search_after', 'ecc_filter_content_end', 100);
-
-/**	add content filtering to single header	**/
-add_action('ecc_single_before', 'ecc_filter_content_start', 1);
-add_action('ecc_single_after', 'ecc_filter_content_end', 100);
-
-
-
-function ecc_filter_content_start()
-{
-	ob_start();	
-}
-
-function ecc_filter_content_end()
-{
-	$result = ob_get_contents();
+// This function loads the plugin.
+function ecc_load_internal_plugin() {
 	
-	ob_end_clean();	
+	$plugins_array = scandir(ECC_PLUGINS_DIR);
 	
-	$result = apply_filters('ecc_filter_content', $result);
+	foreach($plugins_array as $key => $dir)
+	{
+		if($dir == '.' || $dir == '..')
+		{
+			continue;	
+		}
+		
+		include_once(sprintf(ECC_PLUGINS_DIR.'/%s/%s.php', $dir, $dir));
 	
-	echo $result;
+	}
 }
 
 
-/**	attach image loader to content hook	**/
-if(get_option('ecc_image_loader_enable') == true)
-{
-add_filter( 'ecc_filter_content', 'ecc_filter_image', 100 );
-function ecc_filter_image($content)
-{
-	require_once(__DIR__.'/library/php/image-loader/ecc-image-loader.class.php');
-	return Ecc_Image_Loader::filter_image($content);
-}
-}
 ?>
