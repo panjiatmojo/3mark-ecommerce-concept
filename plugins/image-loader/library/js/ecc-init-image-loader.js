@@ -23,6 +23,11 @@ jQuery(document).ready(function($)
 		/**	check wrapper size and assign 0 if not available	**/
 		wrapperSize = $(selector).parent().outerWidth() || 0;
 		
+		/**	set wrapper position to relative	**/
+		var originalPosition = $(selector).parent().css('position');
+		
+		$(selector).parent().css('position', 'relative');
+		
 		/**	check which size is smaller (ignore 0 size)	**/
 		if((pictureSize == 0 || wrapperSize < pictureSize) & wrapperSize > 0)
 		{
@@ -83,13 +88,16 @@ jQuery(document).ready(function($)
 		/**	load image url via ajax	**/
 		$.ajax({
 			type:'POST',
-			url: 'http://tokokompu.com/kontainerbags.com' + '/wp-admin/admin-ajax.php',
+			url: global_variable.base_url + '/wp-admin/admin-ajax.php',
 			data: {'action': 'ecc_image_loader','url':imageSource,'size':startSize.width},
 			error: function()
 			{
 				var currentClass = $(selector).attr('class');
 				var cleanClass = currentClass.replace(/(ecc-image-loader)/i, '');
-				$(selector).attr('src', $(selector).attr('image-src'));								
+				$(selector).attr('src', $(selector).attr('image-src'));	
+											
+				/**	reset parent positioning to original state	**/
+				$(selector).parent().css('position', originalPosition);
 				
 				/**	remove image loader class	**/
 				$(selector).attr('class', cleanClass);
@@ -110,6 +118,9 @@ jQuery(document).ready(function($)
 					var cleanClass = currentClass.replace(/(ecc-image-loader)/i, '');
 					$(selector).attr('src', $(selector).attr('image-src'));								
 					
+					/**	reset parent positioning to original state	**/
+					$(selector).parent().css('position', originalPosition);
+	
 					/**	remove image loader class	**/
 					$(selector).attr('class', cleanClass);
 					return;	
@@ -117,6 +128,9 @@ jQuery(document).ready(function($)
 				
 				var currentClass = $(selector).attr('class');
 				var cleanClass = currentClass.replace(/(ecc-image-loader)/i, '');
+				
+				/**	reset parent positioning to original state	**/
+				$(selector).parent().css('position', originalPosition);
 				
 				/**	remove image loader class	**/
 				$(selector).attr('class', cleanClass);

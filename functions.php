@@ -1183,11 +1183,9 @@ add_shortcode('ecc-kontainer-about-us', 'ecc_kontainer_about_us');
 
 /**	add shortcode for ecc-social-feed	**/
 function ecc_social_feed($atts, $content = "")
-{
-    require_once(__DIR__ . '/library/php/social-media-feed/ecc-feed.class.php');
-    
+{   
     ob_start();
-    Ecc_Feed::show_feed($atts['service'], get_option('ecc_' . $atts['service'] . '_name'), get_option('ecc_' . $atts['service'] . '_feed'));
+    Ecc_Feed::show_feed_container($atts['service'], get_option('ecc_' . $atts['service'] . '_name'), get_option('ecc_' . $atts['service'] . '_feed'));
     
     $result = ob_get_contents();
     
@@ -1197,6 +1195,42 @@ function ecc_social_feed($atts, $content = "")
 }
 add_shortcode('ecc-social-feed', 'ecc_social_feed');
 
+/**	add shortcode to show layout with image background	**/
+function ecc_image_layout($atts, $content = "")
+{
+	/** [ecc-image-layout][background]<image source>[/background][content style="css-style:content"]<your content>[/content][/ecc-image-layout]**/
+	$result = '<div class="ecc-image-layout" style="'.$atts['style'].'">'.do_shortcode($content).'<div style="clear:both"></div></div>';
+
+    return $result;
+}
+add_shortcode('ecc-image-layout', 'ecc_image_layout');
+
+function ecc_image_layout_background($atts, $content)
+{
+	preg_match('/(<img.*?>)/', $content, $match);
+	
+	$background = $match[1];	
+	
+	$background = '<div class="ecc-image-layout-background">'.$background.'</div>';
+	
+	return $background;
+}
+add_shortcode('ecc-background', 'ecc_image_layout_background');
+
+function ecc_image_layout_content($atts, $content)
+{
+	
+	$style = $atts['style'];
+	
+	$content = '<div class="ecc-image-layout-content" style="'.$style.'">'.do_shortcode($content).'</div>';
+	
+	return $content;
+}
+
+add_shortcode('ecc-content', 'ecc_image_layout_content');
+
+
+/**	function to create input form from array argument	**/
 function ecc_create_form($args)
 {
     foreach ($args as $key => $content) {
@@ -1344,9 +1378,9 @@ function ecc_load_init_header()
 }
 
 /**	load internal plugins	**/
-// Run this code on 'after_theme_setup', when plugins have already been loaded.
 add_action('after_setup_theme', 'ecc_load_internal_plugin');
 
+/**	define internal plugins url & dir path	**/
 define('ECC_PLUGINS_URL', plugin_dir_url( __FILE__ ).'/plugins');
 define('ECC_PLUGINS_DIR', plugin_dir_path( __FILE__ ).'/plugins');
 
@@ -1365,6 +1399,12 @@ function ecc_load_internal_plugin() {
 		include_once(sprintf(ECC_PLUGINS_DIR.'/%s/%s.php', $dir, $dir));
 	
 	}
+}
+
+/**	function to get url from given file location	**/
+function get_file_url($file)
+{
+	return $file_url = str_replace(ABSPATH, site_url().'/', dirname($file).'/');	
 }
 
 

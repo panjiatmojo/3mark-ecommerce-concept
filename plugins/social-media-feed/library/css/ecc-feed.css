@@ -1,0 +1,24 @@
+.ecc-feed.container
+{
+	overflow:hidden;	
+}
+
+li.feed-list
+{
+	padding:5%;
+	background:#FFF;
+	color: #444;
+	margin: 2.5% auto;
+	word-wrap: break-word;		
+}
+
+li.feed-list img
+{
+	margin: 2.5% auto;	
+}
+
+li.feed-list a
+{
+	font-style:italic;
+	text-decoration:underline;
+}

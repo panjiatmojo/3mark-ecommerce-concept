@@ -1,20 +1,17 @@
 <?php
 
-/**
- * @package Akismet
- */
 /*
 Plugin Name: 3MARK Image Loader
 Plugin URI: http://theatmojo.com/
 Description: Responsive image loader 
 Version: 1.0.0
 Author: Panji Tri Atmojo
-Author URI: http://theatmojo.com/wordpress-plugins/
+Author URI: http://theatmojo.com
 License: GPLv2 or later
 Text Domain: 3MARK
 */
 
-define('ECC_IMAGE_LOADER_URL', plugin_dir_url( __FILE__ ));
+define('ECC_IMAGE_LOADER_URL', get_file_url( __FILE__ ));
 define('ECC_IMAGE_LOADER_DIR', plugin_dir_path( __FILE__ ));
 
 /**	add action to handle ajax request for image loader	**/
@@ -66,31 +63,26 @@ function ecc_get_image_url($parameter)
 	return $image_src[0];
 }
 
-if (get_option('ecc_image_loader_product_enable')): /**	add content filtering to header single product page	**/ 
-    add_action('ecc_single_page_before', 'ecc_filter_content_start', 1);
-    add_action('ecc_single_page_after', 'ecc_filter_content_end', 100);
-endif;
+add_action( 'after_setup_theme', 'ecc_image_loader_size' );
+function ecc_image_loader_size() {
+	/**	create additional image size to accomodate pictures in mobile phone & table	**/
+  add_image_size( 'mobile-up', 500, 500 ); /**	600px x 600px	**/
+  add_image_size( 'tablet-up', 800, 800 ); /**	800px x 800px	**/
+}
 
-if (get_option('ecc_image_loader_page_enable')): /**	add content filtering to page header	**/ 
-    add_action('ecc_page_before', 'ecc_filter_content_start', 1);
-    add_action('ecc_page_after', 'ecc_filter_content_end', 100);
-endif;
 
-if (get_option('ecc_image_loader_index_enable')): /**	add content filtering to index header	**/ 
-    add_action('ecc_index_before', 'ecc_filter_content_start', 1);
-    add_action('ecc_index_after', 'ecc_filter_content_end', 100);
-endif;
-
-if (get_option('ecc_image_loader_search_enable')): /**	add content filtering to search header	**/ 
-    add_action('ecc_search_before', 'ecc_filter_content_start', 1);
-    add_action('ecc_search_after', 'ecc_filter_content_end', 100);
-endif;
-
-if (get_option('ecc_image_loader_single_enable')): /**	add content filtering to single header	**/ 
-    add_action('ecc_single_before', 'ecc_filter_content_start', 1);
-    add_action('ecc_single_after', 'ecc_filter_content_end', 100);
-endif;
-
+/**	attach content filtering function to get header & get footer hook	**/
+if(get_option('ecc_image_loader_header_enable') == false)
+{
+	/**	if include navigation is disable then add action on ecc_header_after hook	**/
+	add_action('ecc_header_after', 'ecc_filter_content_start', 1000);
+}
+else
+{
+	/**	if include navigation is enabled then add action on get_header hook	**/
+	add_action('get_header', 'ecc_filter_content_start', 1000);
+}
+add_action('get_footer', 'ecc_filter_content_end', 1);
 
 /**	create content intercept using ob start	**/
 function ecc_filter_content_start()

@@ -27,7 +27,17 @@ class Ecc_Image_Loader
 		$result = preg_replace_callback('/<img(.*?)>/', 'Ecc_Image_Loader::add_class', $result);
         
         /**	load script to do lazy load	**/
-        wp_enqueue_script('ecc-init-image-loader', get_template_directory_uri().'/plugins/image-loader/library/js/ecc-init-image-loader.js', 'jquery', '1.0.0', false);
+		wp_register_script( 'ecc-init-image-loader', ECC_IMAGE_LOADER_URL.'library/js/ecc-init-image-loader.js', 'jquery', '1.0.0', false);
+
+		/**	localize sript with additional data	**/
+		$global_array = array(
+			'base_url' => site_url()
+		);
+		wp_localize_script( 'ecc-init-image-loader', 'global_variable', $global_array );
+		
+		wp_enqueue_script( 'ecc-init-image-loader' );
+
+		
         /**	load style to support image loader	**/
         wp_enqueue_style('ecc-image-loader', get_template_directory_uri().'/plugins/image-loader/library/css/ecc-image-loader.css', array(), '1.0.0');
 		

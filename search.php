@@ -30,7 +30,8 @@ $loop = new WP_Query( array(
           "</span></h1>
         <h2>Products</h2>
         <div class="post-content">
-          <div class="product-list"> <?php echo ecc_get_pagination(); ?>
+          <div class="product-list"> 
+		  <?php $pagination = new Ecc_Pagination(); $pagination->show_pagination(); ?>
             <ul>
               <?php
 

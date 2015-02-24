@@ -1,0 +1,30 @@
+ul.pagination li a
+{
+	background: rgb(255,242,0);
+	color:#000;
+}
+
+ul.pagination li.active-page a
+{
+	background: #000;
+	color:rgb(255,242,0);
+	outline: #fff;
+}
+
+
+ul.pagination li, ul.pagination li a
+{
+	width: 30px;
+	height:30px;
+	line-height:30px;	
+	position:relative;
+}
+
+ul.pagination li img
+{
+	position:absolute;
+	top:0;bottom:0;left:0;right:0;
+	margin:auto;	
+	width:auto;
+	height:20px;
+}

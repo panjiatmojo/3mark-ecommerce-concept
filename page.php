@@ -3,8 +3,8 @@
 
 	global $wp_rewrite;
 ?>
-
 <?php do_action('ecc_page_before');?>
+
 <div class="main-wrapper">
   <div <?php post_class('content-wrapper');?>>
     <div class="right-wrapper page">

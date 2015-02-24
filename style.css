@@ -1456,7 +1456,7 @@ nav.woocommerce-breadcrumb {
 }
 .ecc-single-product #reviews .stars a.active {
 	background: rgb(255,242,0);
-	color: #FFF;
+	color: #000;
 }
 .ecc-single-product .product .related {
 	float: left;
@@ -1777,6 +1777,34 @@ ol.commentlist .comment_container .comment-text {
 .post-content .woocommerce form
 {
 	overflow-x: scroll;	
+}
+
+/**	styling for ecc image layout	**/
+.ecc-image-layout
+{
+	width:100%;
+	height:auto;
+	position:relative;
+	overflow:hidden;	
+}
+
+.ecc-image-layout-background
+{
+	width:100%;
+}
+
+.ecc-image-layout-background img
+{
+	width:100%;
+	height: auto;
+}
+
+.ecc-image-layout-content
+{
+	width:40%;
+	position:absolute;
+	top:0;
+	right:0;	
 }
 
 @media (max-width: 1279px)

@@ -102,24 +102,44 @@ class Ecc_Feed
     
     public static function remove_space($content)
     {
-        $content = preg_replace('/(\r\n|\n|\t|\<br\>)/i', '', $content);
+        $content = preg_replace('/(\<br\>)+/i', '<br>', $content);
+        $content = preg_replace('/\s+/i', ' ', $content);
         return $content;
     }
     
     public static function show_description($content)
     {
-        $content = Ecc_Feed::remove_image($content);
+        //$content = Ecc_Feed::remove_image($content);
         $content = Ecc_Feed::remove_space($content);
         
         echo $content;
     }
-    
-    
+   
     public static function show_feed($service, $username, $limit)
     {
         $json_feed = Ecc_Feed::get_feed($service, $username, $limit);
 		include(__DIR__.'/template/ecc-feed-container.php');
     }
+
+    public static function show_feed_container($service, $username, $limit)
+    {
+		/**	create container only, feed update will be done via ajax	**/
+		include(__DIR__.'/template/ecc-feed-container.php');
+		
+		/**	load script to do ajax feed loading	**/
+		wp_register_script( 'ecc-init-feed', ECC_SOCIAL_FEED_URL.'library/js/ecc-init-feed.js', 'jquery', '1.0.0', false);
+
+		/**	localize sript with additional data	**/
+		$global_array = array(
+			'base_url' => site_url()
+		);
+		wp_localize_script( 'ecc-init-feed', 'global_variable', $global_array );
+		
+		wp_enqueue_script( 'ecc-init-feed' );
+		
+		wp_enqueue_style('ecc-feed', ECC_SOCIAL_FEED_URL.'library/css/ecc-feed.css', "", '1.0.0', false);
+    }
+	
     public static function update_feed($service, $username, $limit, $last_id)
     {
         $json_feed = Ecc_Feed::get_feed($service, $username, $limit);
